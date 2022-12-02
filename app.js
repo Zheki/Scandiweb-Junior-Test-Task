@@ -15,10 +15,6 @@ $(document).ready(function(){
         return this.optional(element) || /^[\w.]+$/i.test(value);
     }, "Please enter a valid input (No special characters!)");
 
-    jQuery.validator.addMethod("numeric", function(value, element){
-        return this.optional(element) || /^[0-9]+$/i.test(value);
-    }, "Please enter a valid value");
-
     jQuery.validator.addMethod("validSKU", function(value, element){
         return this.optional(element) || $.inArray($("#sku").val(), passedArray) == -1;
     }, "SKU already exists");
@@ -37,12 +33,12 @@ $(document).ready(function(){
                 },
                 Price: {
                     required: true,
-                    numeric: true
+                    number: true
                 },
 
                 'Attribute[]': {
                     required: true,
-                    numeric: true
+                    number: true
                 }
 
             },
